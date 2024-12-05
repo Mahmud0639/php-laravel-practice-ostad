@@ -1,10 +1,23 @@
 <?php
 //condition
-$marks = 105;
+$marks = 50;
 if($marks<=30){
     echo "Failed";
 }else{
     echo "Passed";
+}
+
+
+//nested condition
+if($marks>=33){
+    echo "\n\nYou are Passed!";
+    if($marks>33){
+        echo "\nYou are chosen to be a partner of the Programming department.";
+    }else{
+        echo "\nContact to the HR.";
+    }
+}else{
+    echo "\nYou are Failed!";
 }
 
 
