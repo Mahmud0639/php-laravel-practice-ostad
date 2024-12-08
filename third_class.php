@@ -27,7 +27,7 @@ if($userName === USERNAME && $userPassword === PASSWORD){
 }else{
     echo "Authentication failed. Try again.";
 }
- */
+
 //electricity bill calculation
 //when 1-100 then multiply by 5, when 101-200 then first 100 is multiply by 5 and the rest is multiply by 10
 //when above 200 then multiply by 15, so first 100 multiply by 5, next 100 multiply by 10 and the rest of the
@@ -44,5 +44,29 @@ if($units <= 100){
 }else{
     $total = 100 * 5 + 100 * 10 + ($units - 200)*15;
     echo "\nTotal bill is: $total";
+} */
+
+//fahrenheit and celsius converter
+define("FACTOR",9/5);
+define("OFFSET",32);//we write OFFSET when need to add or subtract with a value
+
+echo "Enter temperature value: ";
+$temperature = (float) readline();
+
+echo "Choice what you convert to: 1 for Fahrenheit and 2 for Celsius: ";
+$choiceVal = (int) readline();
+
+switch($choiceVal){
+    case 1:
+        $result = $temperature * FACTOR + OFFSET;
+        echo "\nTemperature in Fahrenheit: $result";
+        break;
+    case 2:
+        $result = ($temperature - OFFSET) / FACTOR;
+        $formattedResult = number_format($result,2);
+        echo "\nTemperature in Celsius: $formattedResult";
+        break;
+    default:
+        echo "Invalid choice. Please try again.";    
 }
 
