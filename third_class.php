@@ -1,6 +1,6 @@
 <?php
 //detecting positive, negative or zero
-/* echo "Enter a number: ";
+echo "Enter a number: ";
 $number = (int)readline();
 
 if($number>0){
@@ -44,7 +44,7 @@ if($units <= 100){
 }else{
     $total = 100 * 5 + 100 * 10 + ($units - 200)*15;
     echo "\nTotal bill is: $total";
-} */
+}
 
 //fahrenheit and celsius converter
 define("FACTOR",9/5);
