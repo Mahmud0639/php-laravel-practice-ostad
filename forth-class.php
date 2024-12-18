@@ -60,3 +60,13 @@ $fruits = ["banana","apple","grape","jackfruit","papaya","guava","mango","orange
 foreach($fruits as $fruit){
     echo "The fruit name list is one by one: ".$fruit.PHP_EOL;
 }
+
+//same problem with for loop
+$fruits = ["banana","apple","grape","jackfruit","papaya","guava","mango","orange"];
+for($i=0; $i<=7; $i++){
+    echo $fruits[$i].PHP_EOL;
+}
+
+for($i=0; $i<count($fruits); $i++){
+    echo $fruits[$i].PHP_EOL;
+}
