@@ -1,5 +1,5 @@
 <?php
-//a project of Contact management app
+/* //a project of Contact management app
 
 $contacts = [];
 
@@ -51,5 +51,42 @@ function viewContacts(array &$contacts):void{
 
     }
     //echo "Name: {$contacts['name']}, Email: {$contacts['email']}, Phone: {$contacts['phone']}\n";
+} */
+
+//a project of Quiz App
+$questions = [
+    ['question'=>'What is 2+2 ?','correct'=>'4'],
+    ['question'=>'What is the capital of France ?','correct'=>'Paris'],
+    ['question'=>'Who wrote Hamlet ?','correct'=>'Shakespeare']
+
+];
+
+$answer = [];
+foreach($questions as $index => $question){
+    echo ($index+1).". ". $question['question']."\n";
+    $answer[] = trim(readline("Your answer: "));
+}
+
+function evaluateQuiz(array $questions,array $answer):int{
+    $score = 0;
+    foreach($questions as $index => $question){
+        if($answer[$index]===$question['correct']){
+            $score++;
+        }
+    }
+    return $score;
+
+   
+}
+
+$myScore = evaluateQuiz($questions,$answer);
+echo "You got $myScore out of ".count($questions)."\n";
+
+if($myScore===count($questions)){
+    echo "Excellent job!\n";
+}elseif($myScore>1){
+    echo "Good effort!";
+}else{
+    echo "Better luck next time!";
 }
 
